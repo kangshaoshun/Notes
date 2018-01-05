@@ -1,3 +1,3 @@
 # notes
-*here are some notes *
+** here are some notes **
 
