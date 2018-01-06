@@ -25,13 +25,13 @@
 	Susie	4.25	18
 
 + 高级输出
-	 
+
 	``` {printf("total pay for %s is $%.2f\n", $1, $2*$3)}```
-	
+
 + 选择
-	
+
 	```$2 * $3 > 50 { printf("$%.2f for %s\n", $2 * $3, $1) }```
-	
+
 + 数据验证
 
 	```
@@ -56,8 +56,7 @@ END { print "highest hourly rate:", maxrate, "for", maxemp }
 + 字符串连接
 
 	```
-	    { names = names $1 " "}
-	END { print names }
+	    { names = names $1 " "}	END { print names }
 	```
 
 + 内置函数
@@ -67,7 +66,7 @@ END { print "highest hourly rate:", maxrate, "for", maxemp }
 	```
 
 + for语句
-	
+
 	```
 	{ for (i = 1; i <= $3; i = i + 1)
     	printf("\t%.2f\n", $1 * (1 + $2) ^ i)
@@ -78,7 +77,7 @@ END { print "highest hourly rate:", maxrate, "for", maxemp }
 
 	```
 		    { line[NR] = $0 }  
-			END { i = NR  
+				END { i = NR  
       		while (i > 0) {
         	print line[i]
         i = i - 1
