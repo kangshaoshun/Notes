@@ -21,7 +21,8 @@
 
 ## 文本处理
   1. find 文件查找
-    ```shell
+
+    ```
       find . \( -name "*.txt" -o -name "*.pdf" \) -print  #查找txt 和pdf 文件
       find . -regex ".*\(\.txt|\.pdf\)$" 正则方式查找.txt和pdf
       -iregex：忽略大小写的正则
@@ -40,9 +41,10 @@
         -n 打印匹配的行号
         -i 搜索时忽略大小写
         -l 只打印文件名
-        ```程序猿最爱搜索代码
+
+        ```
             grep "text" . -R -n    
-            ```
+        ```
     3. uniq消除重复行
       ```
         sort unsort.txt |uniq -d  #找出重复行
