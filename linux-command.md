@@ -108,3 +108,60 @@
       sar -q 1 2 #查看运行队列中的进程数，运行负载等
 
     ```
+## 网络工具
+  + 查询网络服务和端口
+    *netstat命令用于显示各种网络相关信息，如网络连接，路由表，接口状态，masquerade连接，多播成员等*
+    + 列出所有端口
+    ```
+      netstat -a
+    ```
+    + 列出所有tcp端口
+    ```
+      netstat -at
+    ```
+    + 列出所有有监听的服务状态
+    ```
+      netstat -l
+    ```
+  + 网络路由
+    + 查看路由状态
+    ```
+      route -n
+    ```
+    +发送ping包到地址IP
+    ```
+      ping IP
+    ```
+    + 探测前往地址IP的路由路径
+    ```
+      traceroute IP
+    ```
+    + DNS查询，寻找域名domain对应的IP
+    ```
+      host domain
+    ```
+    + 反向DNS查询
+    ```
+      host IP
+    ```
+    + ftp sftp lftp ssh
+    ```
+      sftp ID@host    #登录服务器host
+    ```
+    sftp登陆服务器之后，可以用下面的命令一步操作：
+      + get filename  下载文件
+      + put filename  上传文件
+    + lftp同步文件夹（类似rsync工具）
+    ```
+      lftp -u user:pass host
+      lftp user@host:~>mirror -n
+    ```
+    + 网络复制
+      + 将本地localpath指向的文件上传到远程主机的path路径
+      ```
+        scp localpath ID@host:path
+      ```
+      + 以ssh 协议，遍历下载path路径下的整个文件系统，到本地的localpath
+      ```
+        scp -r ID@site:path localpath 
+      ```
