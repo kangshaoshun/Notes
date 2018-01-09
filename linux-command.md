@@ -128,7 +128,7 @@
     ```
       route -n
     ```
-    +发送ping包到地址IP
+    + 发送ping包到地址IP
     ```
       ping IP
     ```
@@ -163,5 +163,5 @@
       ```
       + 以ssh 协议，遍历下载path路径下的整个文件系统，到本地的localpath
       ```
-        scp -r ID@site:path localpath 
+        scp -r ID@site:path localpath
       ```
