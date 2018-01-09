@@ -46,11 +46,13 @@
             grep "text" . -R -n    
         ```
     3. uniq消除重复行
+
       ```
         sort unsort.txt |uniq -d  #找出重复行
       ```
 
     4.cut 按列切分文本
+
       ```
         cut -f1,2 -d';' filename  #截取filename的第1,2列
       ```
@@ -58,7 +60,9 @@
         + -b 以字节为单位
         + -c 以字符为单位
         + -f 以字段为单位（使用定界符）
+
     5. **paste 按列拼接文本**
+
       ```
         cat file1
           1
