@@ -156,7 +156,7 @@
       lftp -u user:pass host
       lftp user@host:~>mirror -n
     ```
-    + 网络复制
+  + 网络复制
       + 将本地localpath指向的文件上传到远程主机的path路径
       ```
         scp localpath ID@host:path
@@ -165,3 +165,51 @@
       ```
         scp -r ID@site:path localpath
       ```
+## 用户管理
+  1. 用户
+    + 添加用户
+      ```
+        useradd -m username
+        passwd username
+      ```
+    + 删除用户
+      ```
+        userdel -r username
+      ```
+  2. 用户的组
+    + 将用户添加到组
+      ```
+        groups
+        usermod -G groupName username //将用户添加到组
+        usermod -g groupName username  //变更用户所属的根组（将用户加入到新组，并从旧组中删除）
+      ```
+    + 查看系统所有组
+      ```
+        more /etc/passwd
+        more /etc/group
+      ```
+  3. 环境变量
+      + bashrc与profile都用于保存用户的环境信息，bashrc用于交互式non-loginshell，而profile用于交互式login shell
+      + /etc/profile，/etc/bashrc 是系统全局环境变量设定  ~/.profile，~/.bashrc用户目录下的私有环境变量设定
+      + 1.首先读入的是全局环境变量设置文件/etc/profile，然后根据其内容读取额外的文档，如/etc/profile.d和/etc/inputrc
+        2.读取当前登录用户Home目录下的文件~/.bash_profile，其次读取~/.bash_login最后读取~/.profile，这三个文档设定基本上是一样的，读取有优先关系
+        3.读取~/.bashrc
+      + ~/.profile与~/.bashrc的区别:
+        这两者都具有个性化定制功能
+          ~/.profile可以设定本用户专有的路径，环境变量，等，它只能登入的时候执行一次
+          ~/.bashrc也是某用户专有设定文档，可以设定路径，命令别名，每次shell script的执行都会使用它一次
+
+## 系统管理
+  1. 查询系统版本
+    ```
+      uname -a
+      lsb_release -a
+      more /etc/release
+    ```
+  2. 查询硬件信息
+    ```
+      sar -u 5 10
+      cat /proc/cpuinfo  //查询CPU信息
+      cat /proc/cpuinfo | grep processor | wc -l  //查询CPU个数
+      arch 显示架构
+    ```
