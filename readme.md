@@ -14,5 +14,8 @@
 
 6. [work_notes](https://github.com/kangshaoshun/Notes/tree/master/work_notes)
 
+7. [config](https://github.com/kangshaoshun/Notes/tree/master/config)
+
+8. [常用工具脚本](https://github.com/kangshaoshun/Notes/tree/master/common_script) 
 
 **不记录记录，你根本不知道你竟然学了这么多东西**
